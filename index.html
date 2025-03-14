@@ -39,6 +39,18 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    .image-container {
+        text-align: center; /* Center images */
+    }
+    .image-container img {
+        display: inline-block;
+        /* width: 45%; */
+        height: auto;
+        margin: 0 10px; /* Space between images */
+    }
+</style>
 </head>
 <body>
 
@@ -130,57 +142,20 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="content has-text-centered">
-        <img src="./static/images/teaser.png" width="100%">
+        <img src="./static/images/teaser.png" width="90%">
       </div>
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/traj.mp4"
-                type="video/mp4">
-      </video> -->
-      <!-- <h2 class="subtitle has-text-centered">
-        DAPS recovers clean data from its noisy observations.
-      </h2> -->
+      <div class="content has-text-justified">
+        <p style="margin-left: 5%; margin-right: 5%;">
+          Overview of Decoupled Annealing Posterior Sampling (DAPS). Our method provides a flexible and effective framework for 
+          solving inverse problems through a decoupled posterior sampling process. In (a)(b), we present DAPS visual results on FFHQ and ImageNet
+          at a resolution of 256, and in (c), on natural images at a resolution of 768. In (d), we display DAPS results on compressed sensing multi-coil
+          MRI (CS-MRI). DAPS effectively addresses nonlinear inverse problems as well as medical imaging MRI challenges. Additionally, DAPS
+          can be enhanced using large-scale latent diffusion models, as shown in (c).
+        </p>
+      </div>
     </div>
   </div>
 </section>
-
-
-<section class="hero" id="videos">
-  <div class="hero-body">
-    <div class="container">
-      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
-        <div class="item has-text-centered js-id-pr">
-          <video poster="" id="steve" autoplay muted controls playsinline width="60%">
-            <source src="./static/videos/pr.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item has-text-centered js-id-inpaint">
-          <video poster="" id="chair-tp" autoplay controls muted playsinline width="60%">
-            <source src="./static/videos/inpaint.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item has-text-centered">
-          <video poster="" id="shiba" autoplay controls muted playsinline width="60%">
-            <source src="./static/videos/hdr.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        
-        <div class="item has-text-centered">
-          <video poster="" id="toby" autoplay controls muted playsinline width="60%">
-            <source src="./static/videos/sr.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item has-text-centered">
-          <img src="./static/images/caption.png" width="54%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-      <!-- </div> -->
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -189,33 +164,26 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          Diffusion models have recently achieved success in solving Bayesian inverse problems with learned data priors. Current methods build on top of the diffusion 
-          sampling process, where each denoising step makes small modifications to samples from the previous step. However, this process struggles to correct errors from
-          earlier sampling steps, leading to worse performance in complicated nonlinear inverse problems, such as phase retrieval. To address this challenge, we propose a
-          new method called Decoupled Annealing Posterior Sampling (DAPS) that relies on a novel noise annealing process. Specifically, we decouple consecutive steps
-          in a diffusion sampling trajectory, allowing them to vary considerably from one another while ensuring their time-marginals anneal to the true posterior as we
-          reduce noise levels. This approach enables the exploration of a larger solution space, improving the success rate for accurate reconstructions. We demonstrate
-          that DAPS significantly improves sample quality and stability across multiple image restoration tasks, particularly in complicated nonlinear inverse problems.
-          For example, we achieve a PSNR of 30.72dB on the FFHQ 256 dataset for phase retrieval, which is an improvement of 9.12dB compared to existing methods.
-          <!-- Our code is available at the GitHub repository DAPS -->
+          Diffusion models have recently achieved success in solving Bayesian inverse problems with learned data priors. 
+          Current methods build on top of the diffusion sampling process, where each denoising step makes small modifications 
+          to samples from the previous step. However, this process struggles to correct errors from earlier sampling steps,
+          leading to worse performance in complicated nonlinear inverse problems, such as phase retrieval. To address this 
+          challenge, we propose a new method called Decoupled Annealing Posterior Sampling (DAPS) that relies on a novel 
+          noise annealing process. Specifically, we decouple consecutive steps in a diffusion sampling trajectory, allowing 
+          them to vary considerably from one another while ensuring their time-marginals anneal to the true posterior as we 
+          reduce noise levels. This approach enables the exploration of a larger solution space, improving the success rate 
+          for accurate reconstructions. We demonstrate that DAPS significantly improves sample quality and stability across 
+          multiple image restoration tasks, particularly in complicated nonlinear inverse problems. 
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+  </div>
+</section>
 
 
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
 
-    <!--/ Paper video. -->
+<section class="section">
+  <div class="container is-max-desktop">
 
     <!-- Method -->
     <div class="columns is-centered has-text-centered">
@@ -245,6 +213,48 @@
 </section>
 
 
+<section class="hero" id="videos">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-5">Demo of how DAPS works</h3>
+
+      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+        <div class="item has-text-centered js-id-pr">
+          <video poster="" id="steve" autoplay muted controls playsinline width="60%">
+            <source src="./static/videos/pr.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item has-text-centered js-id-inpaint">
+          <video poster="" id="chair-tp" autoplay controls muted playsinline width="60%">
+            <source src="./static/videos/inpaint.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- <div class="item has-text-centered">
+          <video poster="" id="shiba" autoplay controls muted playsinline width="60%">
+            <source src="./static/videos/hdr.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+         -->
+        <div class="item has-text-centered">
+          <video poster="" id="toby" autoplay controls muted playsinline width="60%">
+            <source src="./static/videos/sr.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item has-text-centered">
+          <img src="./static/images/caption.png" width="54%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Experiments. -->
@@ -253,50 +263,73 @@
         <h2 class="title is-3  has-text-centered">Experimental Results</h2>
 
         <!-- Synthetic. -->
-        <h3 class="title is-4">2D Synthetic Data</h3>
+        <h3 class="title is-5">2D Synthetic Data</h3>
         <div class="content has-text-justified">
           <p>
             We compare DAPS with DPS on a nonlinear inverse problem with a 2D Gaussian mixture prior. DAPS is able to sample more accurately from the posterior distribution.
           </p>
         </div>
         <div class="content has-text-centered">
-          <img src="./static/images/synthetic.png" width="100%">
+          <img src="./static/images/synthetic.png" width="75%">
         </div>
         <br/>
         <!--/ Synthetic. -->
 
-        <!-- Linear. -->
-        <h3 class="title is-4">Linear Inverse Problems</h3>
+        <!-- Main. -->
+        <h3 class="title is-5">Image Restoration</h3>
         <div class="content has-text-justified">
           <p>
-            We evaluate DAPS with a series of linear inverse problems in image domain, including (1) super-resolution, (2) Gaussian deblurring, (3) motion deblurring,
-            (4) inpainting with a box mask, and (5) inpainting on random pixels. DAPS outperforms existing baselines in terms of perceptual quality (LPIPS) and peak signal-to-noise ratio (PSNR).
+            We evaluate DAPS with a series of inverse problems in image domain, including five linear inverse problems: (1) super-resolution, (2) Gaussian deblurring, (3) motion deblurring,
+            (4) inpainting with a box mask, (5) inpainting on random pixels, and three nonlinear inverse problems: (1) phase retrieval, (2) nonlinear deblurring, (3) high dynamic range reconstruction.
+            DAPS outperforms existing baselines in terms of perceptual quality (LPIPS) and peak signal-to-noise ratio (PSNR).
           </p>
         </div>
         <div class="content has-text-centered">
           <div class="content has-text-centered">
-            <img src="./static/images/linear_table.png" width="100%">
+            <img src="./static/images/main_table.png" width="100%">
           </div>
         </div>
-        <!--/ Linear. -->
+        
+         <h3 class="title is-5">DAPS with Stable Diffusion</h3>
+         <div class="content has-text-justified">
+           <p>
+             DAPS can also be applied to large-scale text-conditioned latent diffusion models, e.g., Stable Diffusion.
+           </p>
+         </div>
+         <div class="content has-text-centered">
+           <div class="content has-text-centered">
+             <img src="./static/images/sd-qual.png" width="90%">
+           </div>
+           <div class="content has-text-justified">
+            Sampling results of LatentDAPS (SD v1.5) on FFHQ 256x256 images. The images are sampled with a guidance scale of 7.5 and a text prompt "a natural looking human face." 
+           </div>
+         </div>
+ 
+        <!--/ Main. -->
 
-        <!-- Nonlinear. -->
-        <h3 class="title is-4">Nonlinear Inverse Problems</h3>
+         <!-- MRI -->
+        <h3 class="title is-5">Compressed Sensing MRI</h3>
         <div class="content has-text-justified">
           <p>
-            We evaluate DAPS on three nonlinear tasks in image domain, including (1) phase retrieval, (2) nonlinear deblurring, and (3) high dynamic range (HDR) reconstruction. 
-            DAPS is remarkably stable when handling nonlinear inverse problems, especially in the highly ill-posed phase retrieval task.
+            We apply DAPS to solve the compressed sensing multi-coil magnetic resonance imaging problem (CS-MRI).
           </p>
         </div>
         <div class="content has-text-centered">
           <div class="content has-text-centered">
-            <img src="./static/images/nonlinear_table.png" width="100%">
+            <div class="image-container">
+              <!-- <img src="image1.jpg" alt="Image 1"> -->
+              <img src="./static/images/mri.png" width="40%">
+              <img src="./static/images/mri-qual.png" width="50%">
+              <!-- <img src="image2.jpg" alt="Image 2"> -->
+            </div>
+            <!-- <img src="./static/images/mri.png" width="50%"> -->
           </div>
         </div>
-        <!--/ Nonlinear. -->
+        <!--/ MRI -->
+
 
         <!-- Sample diversity -->
-        <h3 class="title is-4">Sample Diversity</h3>
+        <h3 class="title is-5">Sample Diversity</h3>
         <div class="content has-text-justified">
           <p>
             DAPS is able to generate diverse samples given less information. For example, we show several generated samples for (1) inpainting with large boxes and (2) 16x super-resolution.
@@ -304,13 +337,28 @@
         </div>
         <div class="content has-text-centered">
           <div class="content has-text-centered">
-            <img src="./static/images/diverse_inpaint.png" width="100%">
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/diverse_sr.png" width="100%">
+            <div class="image-container">
+            <img src="./static/images/diverse_inpaint.png" width="45%">
+            <img src="./static/images/diverse_sr.png" width="45%">
+            </div>
           </div>
         </div>
         <!--/ Sample diversity. -->
+        
+
+        <h3 class="title is-5">Time Efficiency</h3>
+        <div class="content has-text-justified">
+          <p>
+          We run DAPS with various configurations to test its performance under different computing budgets in terms of the number of
+          function evaluation (NFEs). DAPS is able to generate high-quality samples with a modest time cost.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <div class="content has-text-centered">
+            <img src="./static/images/efficiency.png" width="90%">
+          </div>
+        </div>
+
 
       </div>
     </div>
