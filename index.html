@@ -63,6 +63,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Improving Diffusion Inverse Problem Solving with Decoupled Noise Annealing</h1>
+          
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zhangbingliang2019.github.io/">Bingliang Zhang</a><sup>*,1</sup>,</span>
@@ -81,15 +82,19 @@
               <a href="https://yang-song.net/">Yang Song</a><sup>3</sup>,
             </span>
           </div>
-
+          
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>California Institute of Technology &nbsp;&nbsp;</span>
             <span class="author-block"><sup>2</sup>NVIDIA &nbsp;&nbsp;</span>
             <span class="author-block"><sup>3</sup>Stanford University &nbsp;&nbsp;</span>
             <span class="author-block"><sup>4</sup>OpenAI </span>
-            <span class="author-block"><sup>*</sup>Equal Contribution &nbsp;&nbsp;</span>
           </div>
-
+          <div
+            class="is-size-6 publication-authors has-text-centered">* Equal Contribution</div>
+          
+            <div class="is-size-4 publication-authors">
+              CVPR 2025
+            </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
@@ -144,8 +149,24 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <div class="content has-text-centered">
-        <img src="./static/images/teaser_fig.png" width="90%">
+        <img id="teaser" src="./static/images/teaser_fig.jpeg" width="90%" style="filter: blur(0.5px); transition: filter 0.3s ease;">
       </div>
+      <div id="lightbox" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;">
+  
+  <img 
+    src="./static/images/teaser_fig_large.jpeg" 
+    alt="High Resolution Image" 
+    style="max-width: 90%; max-height: 90%; box-shadow: 0 0 20px rgba(0,0,0,0.5); border-radius: 8px;">
+  </div>
+
+
       <div class="content has-text-justified">
         <p style="margin-left: 5%; margin-right: 5%;">
           <b>Overview of Decoupled Annealing Posterior Sampling (DAPS).</b> Our method provides a flexible and effective framework for 
@@ -412,6 +433,32 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const img = document.getElementById('teaser');
+  const highRes = new Image();
+  highRes.src = 'static/images/teaser_fig_large.jpeg';
+
+  highRes.onload = () => {
+    img.src = highRes.src;
+    img.style.filter = 'blur(0)';
+  };
+</script>
+
+<script>
+  const thumbnail = document.getElementById('teaser');
+  const lightbox = document.getElementById('lightbox');
+
+  // Show high-res image
+  thumbnail.onclick = () => {
+    lightbox.style.display = 'flex';
+  };
+
+  // Close lightbox on click
+  lightbox.onclick = () => {
+    lightbox.style.display = 'none';
+  };
+</script>
 
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=0&t=n&d=Le8ezOdnfox42ctbC31_71e6HxywKxc1MkYUjrXLRqc'></script>
 </body>
