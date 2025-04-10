@@ -93,7 +93,7 @@
             class="is-size-6 publication-authors has-text-centered">* Equal Contribution</div>
           
             <div class="is-size-4 publication-authors">
-              CVPR 2025 (Oral presentation)
+              CVPR 2025 Oral
             </div>
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -241,10 +241,33 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h3 class="title is-5">Demo of how DAPS works</h3>
+          <h3 class="title is-5">Sampling Trajectory of DAPS</h3>
+          
+          <div class="video-container">
+            <div class="card">
+              <video class="delay" src="./static/videos/pr.mp4" muted playsinline></video>
+                <img src="./static/images/caption.png" width="90%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="card-content has-text-centered">
+                <p class="title is-6">Phase Retrieval</p>
+              </div>
+            </div>
+            <div class="card">
+              <video class="delay" src="./static/videos/inpaint.mp4" muted playsinline></video>
+              <img src="./static/images/caption.png" width="90%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="card-content has-text-centered">
+                <p class="title is-6">Inpainting</p>
+              </div>
+            </div>
+            <div class="card">
+              <video class="delay" src="./static/videos/hdr.mp4" muted playsinline></video>
+              <img src="./static/images/caption.png" width="90%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="card-content has-text-centered">
+                <p class="title is-6">High Dynamic Range</p>
+              </div>
+            </div>
+          </div>
 
-      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
-        <div class="item has-text-centered js-id-pr">
+        <!-- <div class="item has-text-centered js-id-pr">
           <video poster="" id="steve" autoplay muted controls playsinline width="60%">
             <source src="./static/videos/pr.mp4"
                     type="video/mp4">
@@ -255,7 +278,7 @@
             <source src="./static/videos/inpaint.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!-- <div class="item has-text-centered">
           <video poster="" id="shiba" autoplay controls muted playsinline width="60%">
             <source src="./static/videos/hdr.mp4"
@@ -263,15 +286,12 @@
           </video>
         </div>
          -->
-        <div class="item has-text-centered">
+        <!-- <div class="item has-text-centered">
           <video poster="" id="toby" autoplay controls muted playsinline width="60%">
             <source src="./static/videos/sr.mp4"
                     type="video/mp4">
           </video>
-        </div>
-        <div class="item has-text-centered">
-          <img src="./static/images/caption.png" width="54%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
+        </div> -->
       </div>
       </div>
     </div>
@@ -459,6 +479,20 @@
     lightbox.style.display = 'none';
   };
 </script>
+
+<script>
+  document.querySelectorAll('.delay').forEach(video => {
+    video.play();
+
+    video.addEventListener('ended', () => {
+      setTimeout(() => {
+        video.currentTime = 0;
+        video.play();
+      }, 1000); // 1000 ms = 1 second pause
+    });
+  });
+</script>
+
 
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=0&t=n&d=Le8ezOdnfox42ctbC31_71e6HxywKxc1MkYUjrXLRqc'></script>
 </body>

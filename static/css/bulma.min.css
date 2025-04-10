@@ -2148,7 +2148,15 @@ fieldset[disabled] .button {
     margin-left: .25rem;
     margin-right: .25rem
 }
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* spacing between cards */
+    padding: 2rem;
+  }
 
+  
 .container {
     flex-grow: 1;
     margin: 0 auto;
@@ -5133,13 +5141,26 @@ print {
 
 .card {
     background-color: #fff;
-    border-radius: .25rem;
-    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+    border-radius: 20px;
+    /* box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02); */
     color: #4a4a4a;
     max-width: 100%;
     overflow: hidden;
-    position: relative
+    position: relative;
+    width: 90%;
+    padding: 2rem 1rem 0rem 1rem;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1),
+                0 3px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 
+                0 6px 10px rgba(0, 0, 0, 0.1), 
+                inset 0 0 0 1px rgba(0, 0, 0, 0.05); 
+  }
 
 .card-header {
     background-color: transparent;
@@ -5176,7 +5197,7 @@ print {
 
 .card-content {
     background-color: transparent;
-    padding: 1.5rem
+    padding: 0.5rem
 }
 
 .card-footer {
